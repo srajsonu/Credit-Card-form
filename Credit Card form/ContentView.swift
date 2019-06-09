@@ -9,8 +9,36 @@
 import SwiftUI
 
 struct ContentView : View {
+    
+    @State var firstName = ""
+    @State var lastName = ""
+    
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            VStack(alignment: .leading, spacing: 8){
+                VStack(alignment: .leading, spacing: 8){
+                    VStack{
+                        Group{
+                            TextField($firstName, placeholder: Text("first name"))
+                                .padding(12)
+                            TextField($lastName, placeholder: Text("last name"))
+                                .padding(12)
+                        }.background(Color.white)
+                        
+                        
+                        Button(action: {
+                            
+                        }) {
+                            Text("Create User")
+                        }
+                    }.padding(12)
+                }.background(Color.gray)
+                
+                List{
+                    Text("Empty Row")
+                }
+            }.navigationBarTitle(Text("Credit Card Form"))
+        }
     }
 }
 
